@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".NotificationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:background="@color/colorNotification"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hermes" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="@android:color/white"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"
+      >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/FullMessage"
+                    android:padding="16dp"
+                    android:textSize="16dp"
+                    android:text="Got troubles ? Need my help ?"
+                    android:textColor="@android:color/background_dark"
+                    />
+
+                <TextView
+                    android:id="@+id/linkURL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Got troubles ? Need my help ?"
+                    android:textSize="14sp"
+                    android:padding="16dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@android:color/holo_blue_light"
+                    />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorNotification"
+                android:text="ok"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/loveit"
+                />
+        </RelativeLayout>
+
+
+</LinearLayout>
