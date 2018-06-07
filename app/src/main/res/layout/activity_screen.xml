@@ -8,9 +8,9 @@
     tools:context=".ScreenActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/hermes"
+        android:layout_width="196dp"
+        android:layout_height="196dp"
+        android:src="@drawable/ninjalogo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
