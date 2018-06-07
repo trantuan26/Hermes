@@ -13,16 +13,14 @@ public class NotificationActivity extends AppCompatActivity {
     private TextView FullMessage;
     private TextView linkURL;
     private Button btnOK;
-    private SessionManager sessionManager;
-
-    private String fullmesage;
+      private String fullmesage;
     private String linkurl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
-        sessionManager = new SessionManager(this);
+
         FullMessage = findViewById(R.id.FullMessage);
         linkURL = findViewById(R.id.linkURL);
         btnOK = findViewById(R.id.loveit);
@@ -33,14 +31,10 @@ public class NotificationActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (getIntent() != null) {
-            fullmesage = getIntent().getStringExtra("FullMessage") != null ? getIntent().getStringExtra("FullMessage") : "";
-            linkurl = getIntent().getStringExtra("linkURL") != null ? getIntent().getStringExtra("linkURL") : "";
+        if (getIntent().getExtras() != null) {
+            fullmesage = getIntent().getStringExtra("FullMessage");
+            linkurl = getIntent().getStringExtra("linkURL");
             FullMessage.setText(fullmesage);
             final String htmlString="<u><b>"+linkurl+"</b></u>";
             linkURL.setText(Html.fromHtml(htmlString));
@@ -57,15 +51,14 @@ public class NotificationActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
     public void onBackPressed() {
         super.onBackPressed();
     }
 
-    @Override
-    protected void onDestroy() {
-        ObjectMessage objectMessage = new SessionManager(this).getMESSAGE();
-        objectMessage.setIsOpen(0);
-        new SessionManager(this).setMESSAGE(objectMessage);
-        super.onDestroy();
-    }
+
 }
